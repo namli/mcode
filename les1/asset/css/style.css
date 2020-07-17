@@ -1,0 +1,106 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Roboto';
+  font-size: 1.6rem;
+  line-height: 1.88889;
+  color: #555753;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin-top: 0;
+  text-align: justify;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Shadows Into Light', sans-serif;
+}
+
+h1 {
+  font-size: 2.6rem;
+}
+
+a:link {
+  font-weight: bold;
+  text-decoration: none;
+  color: rgba(0, 0, 0, .93);
+  transition: .2s;
+}
+
+a:visited {
+  font-weight: bold;
+  text-decoration: none;
+  color: rgba(0, 0, 0, .8);
+}
+
+a:hover,
+a:focus,
+a:active {
+  text-decoration: underline;
+  color: rgba(0, 0, 0, .8);
+}
+
+img {
+  vertical-align: top;
+  max-width: 100%;
+}
+
+.logo {
+  text-align: center;
+}
+
+header h1 {
+  text-align: center;
+}
+
+.main-menu {
+  display: flex;
+  justify-content: center;
+}
+
+.main-menu .main-menu-item {
+  padding: 1rem;
+  text-transform: uppercase;
+}
+
+.main-menu .main-menu-item.active {
+  text-decoration: underline;
+}
+
+.pages {}
+
+.pages .page {
+  display: none;
+  max-width: 63em;
+  margin: 0 auto;
+}
+
+.pages .page.active {
+  display: block;
+}
+
+.page-footer {
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, .18);
+}
+
+.page-footer .icon {
+  padding: 0 .5rem;
+}
