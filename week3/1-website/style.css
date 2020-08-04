@@ -1,1 +1,10 @@
-/*  Add your styling here */
+/**  Add your styling here 
+*
+*
+*
+*  Sooooo that why i love Bootstrap
+*/
+
+.carousel--controls img {
+  cursor: pointer;
+}
