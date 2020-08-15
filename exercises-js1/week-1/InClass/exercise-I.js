@@ -1,8 +1,3 @@
-/**
- *  Say my name and year
- * 
- * 
- */
 function getYear(yOld) {
   const date = new Date();
   const year = date.getFullYear();
