@@ -8,6 +8,21 @@
 */
 
 var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+arr.forEach((i, n) => {
+  let result = "";
+  if (i % 15 == 0)
+    result += "FizzBuzz";
+  else if (i % 5 == 0)
+    result += "Buzz";
+  else if (i % 3 == 0)
+    result += "Fizz";
+  else
+    result += i;
+
+  return arr[n] = result;
+});
+
+console.log(arr);
 
 /* EXPECTED OUTPUT */
 

@@ -3,3 +3,23 @@
 
 var numbers = [0.1, 0.2, 0.3, 0.4, 0.5];
 
+// function multiple(n) {
+//   return n * 100;
+// }
+// nn = numbers.map(multiple);
+
+
+// nn = numbers.map(function multiple(n) {
+//   return n * 100;
+// });
+
+
+// nn = numbers.map(function (n) {
+//   return n * 100;
+// });
+
+//nn = numbers.map((n) => {return n * 100;});
+
+//nn = numbers.map((n) => return n * 100;);
+
+nn = numbers.map(n => n * 100);
