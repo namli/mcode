@@ -6,7 +6,7 @@ and for each object, `console.log()` out the sentence:
 
 Here is the array:
 
-*/ 
+*/
 
 var writers = [
   {
@@ -39,6 +39,15 @@ var writers = [
   },
 ];
 
+writers.map((item) => {
+  if (item.alive === true) {
+    console.log(`Hi, my name is ${item.firstName} ${item.lastName}. I am ${item.age} years old, and work as a ${item.occupation}.`);
+  }
+});
+
+function getListOfWriters(arr) {
+
+}
 /*
 If you want an extra challenge, only `console.log()` the writers that are alive.
 */
