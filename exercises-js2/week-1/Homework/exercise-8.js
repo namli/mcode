@@ -41,21 +41,21 @@ function removeSkill(mentors,newSkill){
 function addStudentLikes(mentors){
   //your code here
 }
-*/ 
+*/
 
 var mentors = [
   {
     firstName: "Antonio",
     lastName: "Miranda",
-    skills: ["JS","React","Node"],
+    skills: ["JS", "React", "Node"],
     class: "Mar1",
     studentLikes: 0,
     job:
-      {
-        company: "Google",
-        position: "Senior developer",
-        city: "Barcelona"
-      }
+    {
+      company: "Google",
+      position: "Senior developer",
+      city: "Barcelona"
+    }
   },
   {
     firstName: "Leo",
@@ -64,40 +64,93 @@ var mentors = [
     class: "Mar3",
     studentLikes: 0,
     job:
-      {
-        company: "FC Barcelona",
-        position: "Player",
-        city: "Barcelona"
-      }
+    {
+      company: "FC Barcelona",
+      position: "Player",
+      city: "Barcelona"
+    }
   },
   {
     firstName: "John",
     lastName: "VanDamme",
-    skills: ["React","Angular","Python","Node"],
+    skills: ["React", "Angular", "Python", "Node"],
     class: "Mar4",
     studentLikes: 0,
     job:
-      {
-        company: "Facebook",
-        position: "Software Manager",
-        city: "Chicago"
-      }
-  },  
+    {
+      company: "Facebook",
+      position: "Software Manager",
+      city: "Chicago"
+    }
+  },
   {
     firstName: "Giorgio",
     lastName: "Polvara",
-    skills: ["HTML","JS","React"],
+    skills: ["HTML", "JS", "React"],
     class: "Mar2",
     studentLikes: 0,
     job:
-      {
-        company: "Amazon",
-        position: "Senior developer",
-        city: "Barcelona"
-      }
+    {
+      company: "Amazon",
+      position: "Senior developer",
+      city: "Barcelona"
+    }
   },
 
 ];
 
 //YOUR CODE HERE
 
+mentors.forEach((item) => {
+  item.addStudentLikes = methodAddStudentLikes;
+  item.addSkill = methodAddSkill;
+  item.removeSkill = methodRemoveSkill;
+  if (item.job.city === 'Barcelona' && item.skills.find((s) => { return s === 'React'; })) {
+    console.log(`"Hi, my name is ${item.firstName} ${item.lastName}. I work in Barcelona and i know React."`);
+  }
+  if (item.job.city === 'Barcelona') {
+    item.addSkill('SQL');
+    item.class = 'Jun1';
+  }
+});
+
+function methodAddSkill(name) {
+  this.skills.push(name);
+}
+
+function methodAddStudentLikes() {
+  this.studentLikes = this.studentLikes + 1;
+}
+function methodRemoveSkill(name) {
+  this.skills = this.skills.filter((item) => { return item !== name });
+}
+
+
+
+function addSkill(mentors, newSkill) {
+  mentors.map(item => item.addSkill(newSkill));
+}
+function removeSkill(mentors, newSkill) {
+  mentors.map(item => item.removeSkill(newSkill));
+}
+function addStudentLikes(mentors) {
+  mentors.map(item => item.addStudentLikes());
+}
+
+function mentorWithMoreSkills(mentors) {
+  let mentName = '';
+  let mentSkils = 0;
+  mentors.map((item) => {
+    if (item.skills.length > mentSkils) {
+      mentSkils = item.skills.lenght;
+      mentName = item.firstName + ' ' + item.lastName;
+    }
+  });
+  return mentName;
+}
+
+//addSkill(mentors, '123');
+//removeSkill(mentors, 'React');
+//addStudentLikes(mentors);
+//console.log(mentorWithMoreSkills(mentors));
+//console.log(mentors);
