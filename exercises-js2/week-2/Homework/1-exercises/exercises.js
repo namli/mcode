@@ -14,7 +14,23 @@
  * </div>
  */
 function exerciseOne(arrayOfPeople) {
+
+
   let content = document.querySelector("#content");
+
+  arrayOfPeople.forEach(function (element) {
+
+    h1 = document.createElement("h1");
+    h2 = document.createElement("h2");
+
+    h1.innerText = element.name;
+    h2.innerText = element.job;
+
+    content.appendChild(h1);
+    content.appendChild(h2);
+
+  });
+
 }
 
 /**
@@ -25,8 +41,28 @@ function exerciseOne(arrayOfPeople) {
  *
  */
 function exerciseTwo(shopping) {
-  //Write your code in here
+
+  let content = document.querySelector("#content");
+
+  let ul = document.createElement("ul");
+
+  shopping.forEach(function (element) {
+
+    let li = document.createElement("li");
+    li.innerText = element;
+    ul.appendChild(li);
+
+  });
+
+  content.appendChild(ul);
+
+
 }
+
+
+
+
+
 
 /**
     I'd like to display my three favorite books inside a nice webpage!
@@ -58,7 +94,42 @@ function exerciseTwo(shopping) {
     The end result should look something like this: https://hyf-js2-week1-makeme-ex1-demo.herokuapp.com/
 **/
 function exerciseThree(books) {
-  //Write your code in here
+  let content = document.querySelector("#content");
+
+  let ul = document.createElement("ul");
+
+  let counter = 1;
+
+  books.forEach(function (element) {
+
+    let p = document.createElement("p");
+    p.innerText = element.title + ' - ' + element.author;
+
+    let li = document.createElement("li");
+    li.appendChild(p);
+
+    let img = document.createElement("img");
+    img.setAttribute("src", "images/" + counter + ".jpg");
+
+    li.appendChild(img);
+    counter = counter + 1;
+
+
+
+    if (element.alreadyRead === true) {
+      li.style.backgroundColor = 'green';
+    } else if (element.alreadyRead === false) {
+      li.style.backgroundColor = 'red';
+    }
+
+    ul.appendChild(li);
+  });
+
+  content.appendChild(ul);
+
+
+
+
 }
 
 //
