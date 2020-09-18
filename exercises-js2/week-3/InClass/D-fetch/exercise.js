@@ -10,3 +10,33 @@ user latitude and longitude.
 
 ================
 */
+
+document.addEventListener("DOMContentLoaded", function (event) {
+
+  document.addEventListener("click", getTemp);
+
+});
+
+function getTemp(e) {
+  if (e.target.id === "gettemp") {
+    let lon = document.querySelector("#longitude").value;
+    let lat = document.querySelector("#latitude").value;
+    console.log(`https://fcc-weather-api.glitch.me/api/current?lat=${lat}&lon=${lon}`);
+    fetch(`https://fcc-weather-api.glitch.me/api/current?lat=${lat}&lon=${lon}`)
+      .then(
+        (resp) => {
+          return resp.json();
+        }
+      )
+      .then(
+        (data) => {
+          console.log(data);
+          document.querySelector("#temperatura").innerText = data.main.temp + " °С";
+
+        });
+
+  }
+}
+function getTempLocation() {
+
+}
